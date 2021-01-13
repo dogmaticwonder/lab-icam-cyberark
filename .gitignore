@@ -1,10 +1,18 @@
 # Git Ignore Syntax
 # https://git-scm.com/docs/gitignore
 
+
+# Always ignore
 .DS_Store
+.vagrant/
+
+
+
+# Project Specific ignores 
 private_software/
 archive/
-resources/
-scripts/
-.vagrant/
-DetectionLab/
+research.md
+todo.md
+sailpoint/
+endpoints/
+common/

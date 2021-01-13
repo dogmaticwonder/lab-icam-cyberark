@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.hostname = "vault1"
     cfg.vm.communicator = "winrm"
     cfg.vm.network :public_network, bridge: [ "en0: Wi-Fi (AirPort)", "en1: Wi-Fi (AirPort)" ], ip: "10.130.50.2", dns: "8.8.8.8"
-    config.vm.synced_folder "./private_software", "/private_software"
+    cfg.vm.synced_folder "../private_software", "/private_software"
     cfg.vm.provider "virtualbox" do |vb, override|
       vb.gui = true
       vb.name = "vault1"
@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.hostname = "cpm1"
     cfg.vm.communicator = "winrm"
     cfg.vm.network :public_network, bridge: [ "en0: Wi-Fi (AirPort)", "en1: Wi-Fi (AirPort)" ], ip: "10.130.50.5", dns: "8.8.8.8"
-    config.vm.synced_folder "./private_software", "/private_software"
+    cfg.vm.synced_folder "../private_software", "/private_software"
     cfg.vm.provider "virtualbox" do |vb, override|
       vb.gui = true
       vb.name = "cpm1"
@@ -65,11 +65,11 @@ Vagrant.configure("2") do |config|
 ###  PVWA  ##
 #############
   config.vm.define "pvwa1" do |cfg|
-    cfg.vm.box = "mwrock/Windows2016"
+    cfg.vm.box = "tas50/windows_2019"
     cfg.vm.hostname = "pvwa1"
     cfg.vm.communicator = "winrm"
     cfg.vm.network :public_network, bridge: [ "en0: Wi-Fi (AirPort)", "en1: Wi-Fi (AirPort)" ], ip: "10.130.50.10", dns: "8.8.8.8"
-    config.vm.synced_folder "./private_software", "/private_software"
+    cfg.vm.synced_folder "../private_software", "/private_software"
     cfg.vm.provider "virtualbox" do |vb, override|
       vb.gui = true
       vb.name = "pvwa1"
@@ -89,7 +89,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.hostname = "psm4ssh"
     cfg.vm.communicator = "winrm"
     cfg.vm.network :public_network, bridge: [ "en0: Wi-Fi (AirPort)", "en1: Wi-Fi (AirPort)" ], ip: "10.130.50.10", dns: "8.8.8.8"
-    config.vm.synced_folder "./private_software", "/private_software"
+    cfg.vm.synced_folder "../private_software", "/private_software"
     cfg.vm.provider "virtualbox" do |vb, override|
       vb.gui = true
       vb.name = "psm4ssh"
